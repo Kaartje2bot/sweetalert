@@ -107,13 +107,7 @@ var handleConfirm = function(modal, params) {
  *  User clicked on "Cancel"
  */
 var handleCancel = function(modal, params) {
-  // Check if callback function expects a parameter (to track cancel actions)
-  var functionAsStr = String(params.doneFunction).replace(/\s/g, '');
-  var functionHandlesCancel = functionAsStr.substring(0, 9) === 'function(' && functionAsStr.substring(9, 10) !== ')';
-
-  if (functionHandlesCancel) {
-    params.doneFunction(false);
-  }
+  params.doneFunction(false);
 
   if (params.closeOnCancel) {
     sweetAlert.close();

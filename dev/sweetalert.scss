@@ -25,10 +25,10 @@ body.stop-scrolling {
 
 .sweet-alert {
   $width: 478px;
-  $padding: 17px;
+  $padding: 15px;
 
   background-color: white;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro", Arial, sans-serif;
   width: $width;
   padding: $padding;
   border-radius: 5px;
@@ -39,6 +39,7 @@ body.stop-scrolling {
   top: 50%;
   margin-left: -($width/2 + $padding);
   margin-top: -200px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
 
   overflow: hidden;
   display: none;
@@ -51,16 +52,25 @@ body.stop-scrolling {
 
     left: 15px;
     right: 15px;
+
+    button,
+    .sa-confirm-button-container {
+        width: 100%;
+    }
+    button {
+        font-size: 16px;
+        margin: 15px 0 0 0;
+    }
   }
 
   h2 {
-    color: #575757;
-    font-size: 30px;
+    color: #7f7f7f;
+    font-size: 24px;
     text-align: center;
     font-weight: 600;
     text-transform: none;
     position: relative;
-    margin: 25px 0;
+    margin: 15px 0;
     padding: 0;
     line-height: 40px;
     display: block;
@@ -217,17 +227,17 @@ body.stop-scrolling {
   }
 
   button {
-    $btnBlue: #8CD4F5;
-    $btnGray: #C1C1C1;
+    $btnMagenta: #c01a7d;
+    $btnGray: #c8c8c8;
 
-    background-color: $btnBlue;
+    background-color: $btnMagenta;
     color: white;
     border: none;
     box-shadow: none;
-    font-size: 17px;
-    font-weight: 500;
-    -webkit-border-radius: 4px;
-    border-radius: 5px;
+    font-size: 19px;
+    font-weight: 600;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
     padding: 10px 32px;
     margin: 26px 5px 0 5px;
     cursor: pointer;
@@ -236,10 +246,10 @@ body.stop-scrolling {
       box-shadow: 0 0 2px rgba(128, 179, 235, 0.5), inset 0 0 0 1px rgba(0, 0, 0, 0.05);
     }
     &:hover {
-      background-color: darken($btnBlue, 3%);
+      background-color: darken($btnMagenta, 3%);
     }
     &:active {
-      background-color: darken($btnBlue, 10%);
+      background-color: darken($btnMagenta, 10%);
     }
     &.cancel {
       background-color: $btnGray;
@@ -281,7 +291,10 @@ body.stop-scrolling {
   }
 
   &[data-has-confirm-button=false][data-has-cancel-button=false] {
-    padding-bottom: 40px;
+    padding-bottom: 15px;
+    fieldset {
+        padding: 0;
+    }
   }
 
   .sa-icon {

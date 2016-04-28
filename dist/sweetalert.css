@@ -18,16 +18,17 @@ body.stop-scrolling {
 
 .sweet-alert {
   background-color: white;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro", Arial, sans-serif;
   width: 478px;
-  padding: 17px;
+  padding: 15px;
   border-radius: 5px;
   text-align: center;
   position: fixed;
   left: 50%;
   top: 50%;
-  margin-left: -256px;
+  margin-left: -254px;
   margin-top: -200px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
   overflow: hidden;
   display: none;
   z-index: 99999; }
@@ -37,15 +38,21 @@ body.stop-scrolling {
       margin-left: 0;
       margin-right: 0;
       left: 15px;
-      right: 15px; } }
+      right: 15px; }
+      .sweet-alert button,
+      .sweet-alert .sa-confirm-button-container {
+        width: 100%; }
+      .sweet-alert button {
+        font-size: 16px;
+        margin: 15px 0 0 0; } }
   .sweet-alert h2 {
-    color: #575757;
-    font-size: 30px;
+    color: #7f7f7f;
+    font-size: 24px;
     text-align: center;
     font-weight: 600;
     text-transform: none;
     position: relative;
-    margin: 25px 0;
+    margin: 15px 0;
     padding: 0;
     line-height: 40px;
     display: block; }
@@ -170,14 +177,14 @@ body.stop-scrolling {
     opacity: 0;
     visibility: hidden; }
   .sweet-alert button {
-    background-color: #8CD4F5;
+    background-color: #c01a7d;
     color: white;
     border: none;
     box-shadow: none;
-    font-size: 17px;
-    font-weight: 500;
-    -webkit-border-radius: 4px;
-    border-radius: 5px;
+    font-size: 19px;
+    font-weight: 600;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
     padding: 10px 32px;
     margin: 26px 5px 0 5px;
     cursor: pointer; }
@@ -185,15 +192,15 @@ body.stop-scrolling {
       outline: none;
       box-shadow: 0 0 2px rgba(128, 179, 235, 0.5), inset 0 0 0 1px rgba(0, 0, 0, 0.05); }
     .sweet-alert button:hover {
-      background-color: #7ecff4; }
+      background-color: #b31874; }
     .sweet-alert button:active {
-      background-color: #5dc2f1; }
+      background-color: #931460; }
     .sweet-alert button.cancel {
-      background-color: #C1C1C1; }
+      background-color: #c8c8c8; }
       .sweet-alert button.cancel:hover {
-        background-color: #b9b9b9; }
+        background-color: silver; }
       .sweet-alert button.cancel:active {
-        background-color: #a8a8a8; }
+        background-color: #afafaf; }
       .sweet-alert button.cancel:focus {
         box-shadow: rgba(197, 205, 211, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.0470588) 0px 0px 0px 1px inset !important; }
     .sweet-alert button[disabled] {
@@ -210,7 +217,9 @@ body.stop-scrolling {
   .sweet-alert[data-has-cancel-button=false] button {
     box-shadow: none !important; }
   .sweet-alert[data-has-confirm-button=false][data-has-cancel-button=false] {
-    padding-bottom: 40px; }
+    padding-bottom: 15px; }
+    .sweet-alert[data-has-confirm-button=false][data-has-cancel-button=false] fieldset {
+      padding: 0; }
   .sweet-alert .sa-icon {
     width: 80px;
     height: 80px;

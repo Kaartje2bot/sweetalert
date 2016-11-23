@@ -58,6 +58,11 @@ import setParameters from './modules/set-params';
 var previousWindowKeyDown;
 var lastFocusedButton;
 
+/**
+ * Remember setTimeout value that resets 'data-custom-class'.
+ * @type {Number|null}
+ */
+var closeCustomClassTimeout = null;
 
 /*
  * Global sweetAlert function
@@ -132,7 +137,11 @@ export default sweetAlert = swal = function() {
   // Modal interactions
   var modal = getModal();
 
-
+  if (closeCustomClassTimeout !== null) {
+    //cancel reset custom class with timeout because when model closes and new one opens within timeout, all modals closes
+    clearTimeout(closeCustomClassTimeout);
+    closeCustomClassTimeout = null;
+  }
   /*
    * Make sure all modal buttons respond to all events
    */
@@ -166,7 +175,7 @@ export default sweetAlert = swal = function() {
       }
     }, 0);
   };
-  
+
   // Show alert with enabled buttons always
   swal.enableButtons();
 };
@@ -219,7 +228,7 @@ sweetAlert.close = swal.close = function() {
   removeClass($warningIcon.querySelector('.sa-dot'), 'pulseWarningIns');
 
   // Reset custom class (delay so that UI changes aren't visible)
-  setTimeout(function() {
+  closeCustomClassTimeout = setTimeout(function() {
     var customClass = modal.getAttribute('data-custom-class');
     removeClass(modal, customClass);
   }, 300);
